@@ -1,0 +1,25 @@
+{
+  "name": "homebridge-pidoor",
+  "version": "1.0.0",
+  "description": "Homebridge plugin for Garage Door Dev",
+  "main": "index.js",
+  "keywords": [
+    "homebrige",
+    "smappee",
+    "homebridge-plugin"
+  ],
+  "dependencies": {
+    "request": "^2.81.0",
+    "http": "*"
+  },
+  "engines": {
+    "node": ">=0.12.0",
+    "homebridge": ">=0.2.0"
+  },
+  "author": "Nick McMahon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nmcmahon/homebridge-pidoor/issues"
+  },
+  "homepage": "https://github.com/fredericbarthelet/homebridge-pidoor#readme"
+}
