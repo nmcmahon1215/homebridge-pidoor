@@ -73,7 +73,10 @@ garageDoor.prototype = {
   sendRequest: function(callback, path, field) {
     var urlString = this.piUrlString + path;
     var requestUrl = url.parse(urlString)
-    this.log("Sending request: " + urlString)
+
+    if (!field){
+      this.log("Sending command: " + urlString);
+    }
 
     request({
         url: requestUrl,
@@ -86,7 +89,7 @@ garageDoor.prototype = {
       }
       if (body && body.length > 0){
         var newValue = JSON.parse(body)[field];
-        this.log("Updated Garage Door Status [" + field + "]: " + newValue)
+        this.log("Fetched Garage Door Status [" + field + "]: " + newValue)
         return callback(null, newValue);
       } else {
         return callback(null);
@@ -116,7 +119,7 @@ garageDoor.prototype = {
   tryUpdateValue: function(field, value) {
     if (value != null && value != undefined) {
       var characteristic = this.doorService.getCharacteristic(field);
-      this.log("Updating \"" + characteristic.displayName + "\" with value \"" + value + "\"")
+      this.log("Received \"" + characteristic.displayName + "\" with value \"" + value + "\"")
       this.values[characteristic.displayName] = value;
       characteristic.updateValue(value);
     }
