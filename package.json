@@ -8,6 +8,9 @@
     "smappee",
     "homebridge-plugin"
   ],
+  "devDependencies": {
+    "jshint": "^2.6.0"
+  },
   "dependencies": {
     "request": "^2.81.0",
     "http": "*"
@@ -15,6 +18,9 @@
   "engines": {
     "node": ">=0.12.0",
     "homebridge": ">=0.2.0"
+  },
+  "scripts": {
+    "test": "jshint index.js"
   },
   "author": "Nick McMahon",
   "license": "MIT",
